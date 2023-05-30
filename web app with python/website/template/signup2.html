@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block style %}
+    <style>
+      /* <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"></link> */
+      body 
+      {
+        background-color:  #219ebc;
+        font-family: "Roboto", sans-serif;
+      }
+
+.signup-box {
+  width: 360px;
+  height: 520px;
+  margin: auto;
+  background-color: #fff ;
+  border-radius: 3px;
+}
+
+.login-box {
+  width: 360px;
+  height: 280px;
+  margin: auto;
+  border-radius: 3px;
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
+}
+
+h4 {
+  text-align: center;
+}
+
+form {
+  width: 300px;
+  margin-left: 20px;
+}
+
+form label {
+  display: flex;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+form input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
+input[type="button"] {
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #49c1a2;
+  color: white;
+  font-size: 18px;
+}
+p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+}
+.para-2 {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  margin-top: -10px;
+}
+.para-2 a {
+  color: #49c1a2;
+}
+.ybtns
+{
+  background-color:  #8ecae6;
+  width: 100%;
+  margin-top: 30px;
+  margin-left: 6px;
+  height: 30px;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+
+</style>
+{% endblock %}
+{% block content %}
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <form method="POST">
+        <label>First Name</label>
+        <input type="text" id="firstName" name = "firstName" placeholder="First name" />
+
+        <label>Email</label>
+        <input type="email" id="email" name = "email" placeholder="Enter E-mail"/>
+        <label>Password</label>
+        <input type="password" id="password1" name = "password1" placeholder="Enter pasword" />
+        <label>Confirm Password</label>
+        <input type="password" id="password2" name = "password2" placeholder="Confirm password" />
+        <label>Permission</label>
+        <input type="text" id="permission" name="permission" placeholder="Enter Permission" />
+        <button type="submit" class="ybtns">Sign-up</button>
+        <!-- <input type="button"/ value="Signup"> -->
+      <closeform></closeform></form>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="/login">Login here</a>
+    </p>
+{% endblock %}
+
+
+
+

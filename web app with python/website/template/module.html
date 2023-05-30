@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %}
+    modules
+{% endblock %}
+
+{% block style %}
+<style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    #display
+    {
+        display: none;
+        width: 50%;
+        margin: 0px 0px 0px 250px;
+        border: 1px solid black;
+    }
+    .bg1
+    {
+        background: lightblue;
+        padding: 5px 15px;
+    }
+    .bg2
+    {
+        background-color: white;
+        padding: 15px 15px;
+    }
+    #btn
+    {
+        padding: 5px 15px;
+        font-size: 20px;
+        margin: 10px 0px 20px 550px;
+    }
+    #closeBtn
+    {
+        position: relative;
+        top: -10px;
+        left: 452px;
+    }
+    .closeModal
+    {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+
+{% for x in per %}
+    {% if x == '1' or x=='0' %}
+        <button id="usermanagementbtn" onclick="openmodal('usermanagement')">usermanagement</button>
+        <div class="closeModal" id="usermanagement"> 
+        <h1 class="bg1">User Management <span onclick="closemodal('usermanagement')">&times</span></h1>
+        <button><a href="/signup" target="_blank">Add User</a></button>
+        <br>
+        </div>
+    {% endif %}
+{% endfor %}
+
+{% for x in per %}
+    {% if x == '2' or x=='0' %}
+        <button id="presalesbtn" onclick="openmodal('presales')">presales</button>
+        <div class="closeModal" id="presales"> 
+        <h1 class="bg1">Pre Sales <span onclick="closemodal('presales')">&times</span></h1>
+        </div>
+    {% endif %}
+{% endfor %}
+
+{% for x in per %}
+    {% if x == '3' or x=='0' %}
+        <button id="salesbtn" onclick="openmodal('sales')"">sales</button>
+        <div class="closeModal" id="sales"> 
+		<h1 class="bg1">Sales <span onclick="closemodal('sales')">&times</span></h1>
+	    </div>
+    {% endif %}
+{% endfor %}
+
+{% for x in per %}
+    {% if x == '4' or x=='0' %}
+        <button id="financebtn" onclick="openmodal('finance')">finance</button>
+        <div class="closeModal" id="finance"> 
+		<h1 class="bg1">Finance <span onclick="closemodal('finance')">&times</span></h1>
+	    </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}
+
+
+{% block script %} 
+
+<script>
+function openmodal(id)
+{
+    document.getElementById(id).style.display = "block";
+}
+
+function closemodal(id)
+{
+    document.getElementById(id).style.display = "none";
+}
+</script>
+{% endblock %} 
